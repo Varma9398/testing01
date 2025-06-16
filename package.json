@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://varma9398.github.io/Smart-Palette-Pro",
+  "homepage": "https://varma9398.github.io/colourcraftpro",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
