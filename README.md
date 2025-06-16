@@ -1,69 +1,73 @@
-# Smart Palette Pro
+# Welcome to your Lovable project
 
-A professional color palette extraction tool that helps designers and developers create, manage, and export color palettes from images.
+## Project info
 
-## Features
+**URL**: https://lovable.dev/projects/48d3d6e6-27d0-4416-98ac-eb8d28639876
 
-- **Smart Color Extraction**: Extract dominant, vibrant, muted, light, and dark color palettes from any image
-- **Color Harmony Generation**: Generate complementary, triadic, analogous, monochromatic, and tetradic color harmonies
-- **Extensive Export Options**: Export palettes in various formats including:
-  - Design Software: Adobe ASE, Figma JSON, Sketch Palette, GIMP GPL
-  - Web Development: CSS Custom Properties, SCSS/SASS Variables, Tailwind CSS Config, Bootstrap Theme
-  - Programming & API: JSON Object, JavaScript Array, Python Dictionary, XML Format
-  - Data & Documentation: CMYK Values CSV, Excel Spreadsheet, CSV Data, Plain Text List
-- **Image History**: Keep track of previously uploaded images for quick access
-- **Saved Palettes**: Save and manage your favorite color palettes
-- **Modern UI**: Clean, responsive interface with dark mode support
+## How can I edit this code?
 
-## Tech Stack
+There are several ways of editing your application.
 
-- React
-- TypeScript
-- Tailwind CSS
-- Shadcn UI
-- React Router
-- React Query
+**Use Lovable**
 
-## Getting Started
+Simply visit the [Lovable Project](https://lovable.dev/projects/48d3d6e6-27d0-4416-98ac-eb8d28639876) and start prompting.
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/smart-palette-pro.git
-cd smart-palette-pro
-```
+Changes made via Lovable will be committed automatically to this repo.
 
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-# or
-bun install
-```
+**Use your preferred IDE**
 
-3. Start the development server:
-```bash
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+Follow these steps:
+
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
-# or
-yarn dev
-# or
-bun dev
 ```
 
-4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+**Edit a file directly in GitHub**
 
-## Usage
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-1. Upload an image by dragging and dropping or clicking the upload area
-2. View the extracted color palettes
-3. Generate color harmonies
-4. Save palettes for later use
-5. Export palettes in your preferred format
+**Use GitHub Codespaces**
 
-## License
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-MIT License - feel free to use this project for your own purposes.
+## What technologies are used for this project?
 
-## Contributing
+This project is built with:
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+## How can I deploy this project?
+
+Simply open [Lovable](https://lovable.dev/projects/48d3d6e6-27d0-4416-98ac-eb8d28639876) and click on Share -> Publish.
+
+## Can I connect a custom domain to my Lovable project?
+
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
