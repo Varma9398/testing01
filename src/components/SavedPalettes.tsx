@@ -65,18 +65,18 @@ const SavedPalettes: React.FC<SavedPalettesProps> = ({ palettes, onPaletteLoad, 
       }
       
       const blob = new Blob([data], { type: mimeType });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
       a.download = `${palette.name.replace(/\s+/g, '-').toLowerCase()}.${filenameExtension}`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
 
-      toast({
-        title: "Exported!",
-        description: `Palette exported as ${format.toUpperCase()}`,
+    toast({
+      title: "Exported!",
+      description: `Palette exported as ${format.toUpperCase()}`,
       });
     }).catch(error => {
       console.error('Export failed:', error);
@@ -147,56 +147,56 @@ const SavedPalettes: React.FC<SavedPalettesProps> = ({ palettes, onPaletteLoad, 
         <ScrollArea className="h-[500px] pr-4">
           <div className="grid grid-cols-1 gap-3">
             {palettes.map((palette) => (
-              <div
-                key={palette.id}
+            <div
+              key={palette.id}
                 className="p-2 rounded-lg border border-border/30 hover:border-primary/30 cursor-pointer transition-colors"
-                onClick={() => handleLoad(palette)}
-              >
+              onClick={() => handleLoad(palette)}
+            >
                 <div className="flex justify-between items-center mb-1">
-                  <div>
+                <div>
                     <h3 className="font-medium truncate text-base">{palette.name}</h3>
                     <div className="flex items-center text-xs text-muted-foreground mt-0.5">
                       <Clock className="w-3 h-3 mr-1" />
                       {formatDateTime(palette.createdAt)}
                     </div>
-                  </div>
-                  <div className="flex gap-1">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleExport(palette);
-                      }}
-                      className="h-7 w-7 p-0"
-                    >
-                      <Download className="w-3.5 h-3.5" />
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onDeletePalette(palette.id);
-                      }}
-                      className="h-7 w-7 p-0 text-muted-foreground hover:text-foreground"
-                    >
-                      <Trash className="w-3.5 h-3.5" />
-                    </Button>
-                  </div>
                 </div>
+                <div className="flex gap-1">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleExport(palette);
+                    }}
+                      className="h-7 w-7 p-0"
+                  >
+                      <Download className="w-3.5 h-3.5" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                        onDeletePalette(palette.id);
+                    }}
+                      className="h-7 w-7 p-0 text-muted-foreground hover:text-foreground"
+                  >
+                      <Trash className="w-3.5 h-3.5" />
+                  </Button>
+                </div>
+              </div>
                 <div className="flex gap-1">
                   {palette.colors.map((color, index) => (
                     <div
-                      key={index}
+                    key={index}
                       className="w-5 h-5 rounded-full border border-border/30"
                       style={{ backgroundColor: color.hex }}
-                    />
-                  ))}
-                </div>
+                  />
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
         </ScrollArea>
       </CardContent>
     </Card>

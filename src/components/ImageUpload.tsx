@@ -13,23 +13,23 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onImageUpload, onImageChange 
     onImageChange(null); // Clear current image display if multiple images are dropped
     acceptedFiles.forEach(file => {
       if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const img = new Image();
-          img.onload = () => {
-            const canvas = document.createElement('canvas');
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
             canvas.width = img.width;
             canvas.height = img.height;
-            const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext('2d');
             if (ctx) {
               ctx.drawImage(img, 0, 0);
               const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
               onImageUpload(imageData, file.name, e.target?.result as string);
             }
-          };
-          img.src = e.target?.result as string;
-        };
-        reader.readAsDataURL(file);
+      };
+      img.src = e.target?.result as string;
+    };
+    reader.readAsDataURL(file);
       }
     });
   }, [onImageUpload, onImageChange]);

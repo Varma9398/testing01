@@ -97,19 +97,19 @@ const PaletteDisplay: React.FC<PaletteDisplayProps> = ({
       }
       
       const blob = new Blob([exportedData], { type: mimeType });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
       a.download = `${paletteName.replace(/\s+/g, '-').toLowerCase()}.${filenameExtension}`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
 
-      toast({
-        title: "Exported!",
+    toast({
+      title: "Exported!",
         description: `Palette exported as ${format.toUpperCase()}`,
-      });
+    });
     } catch (error) {
       console.error('Export failed:', error);
       toast({
