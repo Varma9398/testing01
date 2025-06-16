@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 220 27% 8%;
+    --foreground: 220 9% 95%;
+
+    --card: 220 27% 10%;
+    --card-foreground: 220 9% 95%;
+
+    --popover: 220 27% 10%;
+    --popover-foreground: 220 9% 95%;
+
+    --primary: 193 95% 48%;
+    --primary-foreground: 220 27% 8%;
+
+    --secondary: 220 27% 15%;
+    --secondary-foreground: 220 9% 85%;
+
+    --muted: 220 27% 15%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 263 85% 60%;
+    --accent-foreground: 220 9% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 27% 18%;
+    --input: 220 27% 18%;
+    --ring: 193 95% 48%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 27% 8%;
+    --sidebar-foreground: 220 9% 95%;
+    --sidebar-primary: 193 95% 48%;
+    --sidebar-primary-foreground: 220 27% 8%;
+    --sidebar-accent: 220 27% 15%;
+    --sidebar-accent-foreground: 220 9% 95%;
+    --sidebar-border: 220 27% 18%;
+    --sidebar-ring: 193 95% 48%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer components {
+  .color-swatch {
+    @apply w-16 h-16 rounded-lg border-2 border-border/20 cursor-pointer transition-all duration-200 hover:scale-110 hover:border-primary/50;
+  }
+
+  .color-swatch-large {
+    @apply w-24 h-24 rounded-xl border-2 border-border/20 cursor-pointer transition-all duration-200 hover:scale-105 hover:border-primary/50;
+  }
+
+  .gradient-bg {
+    position: relative;
+    background: linear-gradient(
+      125deg,
+      hsl(220 27% 8%) 0%,
+      hsl(220 27% 12%) 25%,
+      hsl(220 27% 8%) 50%,
+      hsl(220 27% 12%) 75%,
+      hsl(220 27% 8%) 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow: hidden;
+  }
+
+  .gradient-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(193, 95%, 48%, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(263, 85%, 60%, 0.03) 0%, transparent 50%);
+    animation: windEffect 20s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .gradient-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(45deg, transparent 0%, rgba(193, 95%, 48%, 0.02) 50%, transparent 100%);
+    animation: windSweep 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 focus:ring-2 focus:ring-primary/50 focus:outline-none transition-all duration-200;
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 focus:ring-2 focus:ring-secondary/50 focus:outline-none transition-all duration-200;
+  }
+}
+
+/* Enhanced animations */
+@keyframes gradient-flow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(34, 211, 238, 0.6), 0 0 60px rgba(34, 211, 238, 0.3);
+  }
+}
+
+/* Login specific styles */
+.group:focus-within .group-focus-within\:text-primary {
+  color: hsl(var(--primary));
+}
+
+input:focus + svg {
+  color: hsl(var(--primary));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes windEffect {
+  0% {
+    transform: translateX(-10%) translateY(-10%) scale(1.1);
+  }
+  50% {
+    transform: translateX(10%) translateY(10%) scale(0.9);
+  }
+  100% {
+    transform: translateX(-10%) translateY(-10%) scale(1.1);
+  }
+}
+
+@keyframes windSweep {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+/* Welcome Popup Animations */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
