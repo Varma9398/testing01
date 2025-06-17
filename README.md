@@ -1,111 +1,73 @@
-# Smart Palette Pro
+# Welcome to your Lovable project
 
-A professional color palette generator web application that extracts beautiful color palettes from uploaded images.
+## Project info
 
-## Features
+**URL**: https://lovable.dev/projects/48d3d6e6-27d0-4416-98ac-eb8d28639876
 
-- **Image Upload**: Upload images to extract color palettes
-- **Color Extraction**: Automatically extract dominant colors and create palettes
-- **Color Harmony Generator**: Generate harmonious color combinations
-- **Image History**: Track and manage uploaded images with their extracted palettes
-- **Saved Palettes**: Save and manage your favorite color palettes
-- **Export Options**: Export palettes in various formats
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
+## How can I edit this code?
 
-## Tech Stack
+There are several ways of editing your application.
 
-- React 18
-- TypeScript
-- Vite
-- Tailwind CSS
-- Shadcn/ui Components
-- React Router DOM
+**Use Lovable**
 
-## Development
+Simply visit the [Lovable Project](https://lovable.dev/projects/48d3d6e6-27d0-4416-98ac-eb8d28639876) and start prompting.
 
-### Prerequisites
+Changes made via Lovable will be committed automatically to this repo.
 
-- Node.js 18 or higher
-- npm or yarn
+**Use your preferred IDE**
 
-### Installation
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-1. Clone the repository:
-```bash
-git clone https://github.com/varma9398/SMART.git
-cd SMART
-```
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-2. Install dependencies:
-```bash
-npm install
-```
+Follow these steps:
 
-3. Start the development server:
-```bash
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-4. Open [http://localhost:8080](http://localhost:8080) in your browser.
+**Edit a file directly in GitHub**
 
-### Build
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-To build for production:
-```bash
-npm run build
-```
+**Use GitHub Codespaces**
 
-## Deployment
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-This project is configured for automatic deployment to GitHub Pages.
+## What technologies are used for this project?
 
-### Automatic Deployment (Recommended)
+This project is built with:
 
-The project uses GitHub Actions for automatic deployment. Every push to the `main` branch will trigger a build and deployment to GitHub Pages.
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-### Manual Deployment
+## How can I deploy this project?
 
-If you prefer manual deployment:
+Simply open [Lovable](https://lovable.dev/projects/48d3d6e6-27d0-4416-98ac-eb8d28639876) and click on Share -> Publish.
 
-1. Build the project:
-```bash
-npm run build
-```
+## Can I connect a custom domain to my Lovable project?
 
-2. Deploy to GitHub Pages:
-```bash
-npm run deploy
-```
+Yes, you can!
 
-### GitHub Pages Setup
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-1. Go to your repository settings on GitHub
-2. Navigate to "Pages" in the sidebar
-3. Set the source to "GitHub Actions"
-4. The site will be available at: `https://varma9398.github.io/SMART/`
-
-## Project Structure
-
-```
-src/
-├── components/          # React components
-│   ├── ui/             # Shadcn/ui components
-│   └── ...             # Custom components
-├── hooks/              # Custom React hooks
-├── lib/                # Utility libraries
-├── pages/              # Page components
-├── utils/              # Utility functions
-└── ...
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Commit and push to your branch
-5. Create a Pull Request
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
