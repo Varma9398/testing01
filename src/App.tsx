@@ -12,7 +12,7 @@ function App() {
         <Toaster />
       </div>
     </Router>
-  );
+);
 }
 
 export default App;

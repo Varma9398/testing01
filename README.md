@@ -1,24 +1,25 @@
-# Smart Palette Pro FX
+# Smart Palette Pro
 
-A professional color palette generator web application that extracts colors from uploaded images and generates harmonious color palettes.
+A professional color palette generator web application that extracts beautiful color palettes from uploaded images.
 
 ## Features
 
 - **Image Upload**: Upload images to extract color palettes
-- **Color Extraction**: Automatically extract dominant colors from images
-- **Harmony Generator**: Generate harmonious color combinations
-- **Palette Management**: Save and manage your favorite palettes
-- **Image History**: Track uploaded images with thumbnails and details
+- **Color Extraction**: Automatically extract dominant colors and create palettes
+- **Color Harmony Generator**: Generate harmonious color combinations
+- **Image History**: Track and manage uploaded images with their extracted palettes
+- **Saved Palettes**: Save and manage your favorite color palettes
+- **Export Options**: Export palettes in various formats
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
 
 ## Tech Stack
 
-- React 18 with TypeScript
-- Vite for build tooling
-- Tailwind CSS for styling
-- Shadcn/ui components
-- React Router for navigation
-- Local storage for data persistence
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Shadcn/ui Components
+- React Router DOM
 
 ## Development
 
@@ -47,31 +48,41 @@ npm run dev
 
 4. Open [http://localhost:8080](http://localhost:8080) in your browser.
 
-### Available Scripts
+### Build
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run deploy` - Deploy to GitHub Pages (manual)
+To build for production:
+```bash
+npm run build
+```
 
 ## Deployment
 
-### GitHub Pages (Automatic)
+This project is configured for automatic deployment to GitHub Pages.
 
-This project is configured to automatically deploy to GitHub Pages when you push to the `main` branch.
+### Automatic Deployment (Recommended)
 
-1. Push your changes to the main branch
-2. GitHub Actions will automatically build and deploy to `https://varma9398.github.io/SMART/`
+The project uses GitHub Actions for automatic deployment. Every push to the `main` branch will trigger a build and deployment to GitHub Pages.
 
 ### Manual Deployment
 
-If you prefer to deploy manually:
+If you prefer manual deployment:
 
+1. Build the project:
 ```bash
 npm run build
+```
+
+2. Deploy to GitHub Pages:
+```bash
 npm run deploy
 ```
+
+### GitHub Pages Setup
+
+1. Go to your repository settings on GitHub
+2. Navigate to "Pages" in the sidebar
+3. Set the source to "GitHub Actions"
+4. The site will be available at: `https://varma9398.github.io/SMART/`
 
 ## Project Structure
 
@@ -79,15 +90,12 @@ npm run deploy
 src/
 ├── components/          # React components
 │   ├── ui/             # Shadcn/ui components
-│   ├── ImageUpload.tsx # Image upload functionality
-│   ├── PaletteDisplay.tsx # Color palette display
-│   ├── HarmonyGenerator.tsx # Color harmony generation
-│   ├── SavedPalettes.tsx # Saved palettes management
-│   └── ImageHistory.tsx # Image upload history
-├── pages/              # Page components
+│   └── ...             # Custom components
 ├── hooks/              # Custom React hooks
+├── lib/                # Utility libraries
+├── pages/              # Page components
 ├── utils/              # Utility functions
-└── lib/                # Library configurations
+└── ...
 ```
 
 ## Contributing
@@ -95,7 +103,8 @@ src/
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Submit a pull request
+4. Commit and push to your branch
+5. Create a Pull Request
 
 ## License
 
